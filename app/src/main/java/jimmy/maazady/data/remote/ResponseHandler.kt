@@ -10,8 +10,7 @@ class ResponseHandler {
     companion object {
 
         fun <T> handleSuccess(response: Response<T>): Resource<T> {
-            if (response.status == 0) throw Exception(response.msg)
-            else return Resource.Success(response.data)
+            return Resource.Success(response.data)
         }
 
         fun <T> handleException(ex: Exception): Resource<T> {
