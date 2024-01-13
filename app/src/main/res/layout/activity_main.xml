@@ -161,42 +161,57 @@
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/all"
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        style="@style/CustomChipChoice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:checkable="true"
                         android:checked="true"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:text="All"
                         app:chipCornerRadius="5dp" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/ux"
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        style="@style/CustomChipChoice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:text="UI/UX"
                         app:chipCornerRadius="5dp" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/illustration"
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        style="@style/CustomChipChoice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:text="Illustration"
                         app:chipCornerRadius="5dp" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/animation"
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        style="@style/CustomChipChoice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:text="3D Animation"
                         app:chipCornerRadius="5dp" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/option"
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        style="@style/CustomChipChoice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:text="Whatever"
                         app:chipCornerRadius="5dp" />
                 </com.google.android.material.chip.ChipGroup>
@@ -219,8 +234,10 @@
                 android:id="@+id/indicator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
                 app:defaultIndicator="@drawable/default_indicator"
                 app:indicatorMargin="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/viewPager"

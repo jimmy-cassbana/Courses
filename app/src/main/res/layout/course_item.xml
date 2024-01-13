@@ -9,9 +9,13 @@
     <ImageView
         android:id="@+id/ivCourse"
         android:layout_width="300dp"
-        android:layout_height="400dp"
+        android:layout_height="420dp"
         android:scaleType="fitXY"
-        android:src="@drawable/course_bg" />
+        android:src="@drawable/course_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -29,6 +33,7 @@
         app:layout_constraintTop_toTopOf="@id/ivCourse" />
 
     <ImageView
+        android:id="@+id/ivProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -36,5 +41,121 @@
         android:src="@drawable/author"
         app:layout_constraintBottom_toBottomOf="@id/ivCourse"
         app:layout_constraintStart_toStartOf="@id/ivCourse" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Laurel Seilha"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/ivProfile"
+        app:layout_constraintTop_toTopOf="@id/ivProfile" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Product Designer"
+        android:textColor="@color/light_grey"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/ivProfile"
+        app:layout_constraintStart_toEndOf="@id/ivProfile" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/numberCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="@color/cyan"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toTopOf="@id/ivProfile"
+        app:layout_constraintStart_toStartOf="@id/ivProfile">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="6 lessons"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/categoryCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="@color/blue"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toTopOf="@id/ivProfile"
+        app:layout_constraintStart_toEndOf="@id/numberCard">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="UI/UX"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/pricingCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="@color/purple"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toTopOf="@id/ivProfile"
+        app:layout_constraintStart_toEndOf="@id/categoryCard">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Free"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <ImageView
+        android:id="@+id/ivTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:src="@drawable/ic_stopwatch"
+        app:layout_constraintBottom_toTopOf="@id/numberCard"
+        app:layout_constraintStart_toStartOf="@id/numberCard" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="5h 21m"
+        android:textColor="@color/grey"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/ivTime"
+        app:layout_constraintStart_toEndOf="@id/ivTime"
+        app:layout_constraintTop_toTopOf="@id/ivTime" />
+
+    <TextView
+        android:layout_marginBottom="5dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="@id/ivCourse"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/ivTime"
+        app:layout_constraintStart_toStartOf="@id/ivTime"
+        android:text="Step design sprint for beginner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
