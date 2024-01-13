@@ -1,10 +1,11 @@
-package jimmy.maazady
+package jimmy.maazady.ui.courses
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.github.islamkhsh.CardSliderAdapter
+import jimmy.maazady.R
 
 class CourseAdapter(private val dataSet : Array<Int>) :
     CardSliderAdapter<CourseAdapter.MovieViewHolder>() {

@@ -1,10 +1,11 @@
-package jimmy.maazady
+package jimmy.maazady.ui.courses
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
 import com.github.islamkhsh.CardSliderViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import jimmy.maazady.R
 import jimmy.maazady.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
