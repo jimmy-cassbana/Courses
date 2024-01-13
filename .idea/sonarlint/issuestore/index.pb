@@ -7,8 +7,6 @@ g
 7app/src/main/java/jimmy/maazady/data/remote/Resource.kt,a/1/a124b977e142f64b973d8a7bfbd6866f0f1cb616
 f
 6app/src/main/java/jimmy/maazady/base/BaseRepository.kt,0/7/073459b9ed0a07093247a8a2e81243c8f2827709
-s
-Capp/src/main/java/jimmy/maazady/data/repository/SearchRepository.kt,7/5/75c4efab5848dee7a1ea2bef27df5ce4a159629e
 f
 6app/src/main/java/jimmy/maazady/di/ViewModelModules.kt,a/8/a8e1114b0f4d8db5cc24d94285d930415239e762
 b
@@ -19,3 +17,17 @@ j
 :app/src/main/java/jimmy/maazady/ui/courses/MainActivity.kt,f/8/f831c9019c9591b166cd193c027bbf2a554974f5
 d
 4app/src/main/java/jimmy/maazady/base/BaseActivity.kt,d/5/d59fae1e18c373a30cd9ab8e864caf6d394af5e8
+f
+6app/src/main/java/jimmy/maazady/di/RepositoryModule.kt,b/2/b22434875998007d73adbeb9d313887381f5eb6f
+`
+0app/src/main/java/jimmy/maazady/di/DataModule.kt,a/f/afba8812f4e7a18f14276da56d666b2eb944b38b
+P
+ app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
+@
+app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
+p
+@app/src/main/java/jimmy/maazady/data/model/CategoriesResponse.kt,d/9/d97f41ac3ad08f109387ab3d22e512abe23f6cc2
+n
+>app/src/main/java/jimmy/maazady/data/remote/ResponseHandler.kt,1/1/11f94c31b3c83fc758bb9b30ac07dfc3760181b8
+f
+6app/src/main/java/jimmy/maazady/data/model/Category.kt,c/3/c34d5a1e26d7d6e64ed8e4b9c70ce2634c5b7db5

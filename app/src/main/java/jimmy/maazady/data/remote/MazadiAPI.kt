@@ -13,9 +13,9 @@ interface MazadiAPI {
 
     @Headers("Accept-Language:en")
     @GET("properties")
-    suspend fun getProperties(@Query("cat") catId: Int): Response<List<Property>>
+    suspend fun getProperties(@Query("cat") catId: Int): Response<ArrayList<Property>>
 
     @Headers("Accept-Language:en")
     @GET("get-options-child/{id}")
-    suspend fun getOptionsChild(@Path("id") id: Int): Response<List<Property>>
+    suspend fun getOptionsChild(@Path("id") id: Int): Response<ArrayList<Property>>
 }

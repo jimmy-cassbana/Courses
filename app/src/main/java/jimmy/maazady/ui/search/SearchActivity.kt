@@ -48,7 +48,11 @@ class SearchActivity : BaseActivity() {
 
     private fun getProperties(id: Int) {
         observe(viewModel.getProperties(id)) {
-            propertyRecycler.adapter = SearchAdapter(it, supportFragmentManager)
+            propertyRecycler.adapter = SearchAdapter(it, supportFragmentManager){ property ->
+                observe(viewModel.getOptions(property.id)){ newList ->
+                    (propertyRecycler.adapter as SearchAdapter).insert(newList, property, this)
+                }
+            }
         }
     }
 }

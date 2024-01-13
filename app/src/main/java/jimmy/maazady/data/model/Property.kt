@@ -5,5 +5,6 @@ data class Property(
     val name: String,
     val parent: Int,
     val child: Boolean,
-    val options: List<Property>
+    val options: List<Property>,
+    var text: String? = null
 )

@@ -1,8 +1,10 @@
 package jimmy.maazady.ui.search
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textfield.TextInputEditText
@@ -12,8 +14,9 @@ import jimmy.maazady.data.model.OptionPair
 import jimmy.maazady.data.model.Property
 
 class SearchAdapter(
-    private val dataSet: List<Property>,
-    private val fragmentManager: FragmentManager
+    private val dataSet: ArrayList<Property>,
+    private val fragmentManager: FragmentManager,
+    private val fetchChilds: (property: Property) -> Unit
 ) :
     RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
 
@@ -31,13 +34,24 @@ class SearchAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.inputLayout.hint = dataSet[position].name
+        holder.inputEditText.setText(dataSet[position].text)
         holder.inputEditText.setOnClickListener {
-            BottomSheet(dataSet[position].options.map { OptionPair(it.id, it.name) }) {
-                holder.inputEditText.setText(it.value)
+            BottomSheet(dataSet[position].options.map { OptionPair(it.id, it.name) }) { pair ->
+                dataSet[position].text = pair.value
+                holder.inputEditText.setText(pair.value)
+                dataSet[position].options.find { it.id == pair.id }?.let { property ->
+                    if (property.child) fetchChilds(property)
+                }
             }.show(fragmentManager, null)
         }
     }
 
     override fun getItemCount() = dataSet.size
+
+    fun insert(properties: List<Property>, property: Property, context: Context) {
+        val index = dataSet.indexOfFirst { it.id == property.parent } + 1
+        dataSet.addAll(index, properties)
+        notifyItemRangeInserted(index, properties.size)
+    }
 
 }
