@@ -17,9 +17,5 @@ b
 2app/src/main/java/jimmy/maazady/base/MaazadyApp.kt,4/c/4cd73363b31dec4fb5a73aa55350689ff78e4f87
 j
 :app/src/main/java/jimmy/maazady/ui/courses/MainActivity.kt,f/8/f831c9019c9591b166cd193c027bbf2a554974f5
-f
-6app/src/main/java/jimmy/maazady/ui/courses/Adapters.kt,9/1/91b9d35937961ee0037ce53ca89b2bd4ca8f3869
 d
 4app/src/main/java/jimmy/maazady/base/BaseActivity.kt,d/5/d59fae1e18c373a30cd9ab8e864caf6d394af5e8
-d
-4app/src/main/java/jimmy/maazady/data/model/Option.kt,d/1/d1973234b9f51b4c8156f189bfe128ad03e1c9eb

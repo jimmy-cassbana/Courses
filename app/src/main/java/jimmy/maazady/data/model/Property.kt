@@ -1,5 +1,9 @@
 package jimmy.maazady.data.model
 
-import jimmy.maazady.data.model.Option
-
-data class Property(val id: Int, val options: List<Option>)
+data class Property(
+    val id: Int,
+    val name: String,
+    val parent: Int,
+    val child: Boolean,
+    val options: List<Property>
+)

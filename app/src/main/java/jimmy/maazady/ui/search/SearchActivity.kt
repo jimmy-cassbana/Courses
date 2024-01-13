@@ -1,6 +1,7 @@
 package jimmy.maazady.ui.search
 
 import android.os.Bundle
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textfield.TextInputEditText
 import jimmy.maazady.R
 import jimmy.maazady.base.BaseActivity
@@ -12,12 +13,13 @@ class SearchActivity : BaseActivity() {
 
     private val viewModel: SearchViewModel by viewModel()
     private var selectedCategoryId = 0
-    private var selectedSubCategoryId = 0
+    private lateinit var propertyRecycler: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
         observe(viewModel.categories) { populateSpinners(it) }
+        propertyRecycler = findViewById(R.id.propertiesRecycler)
     }
 
     private fun populateSpinners(data: CategoriesResponse) {
@@ -27,8 +29,8 @@ class SearchActivity : BaseActivity() {
         edtCategory.setOnClickListener { view ->
             BottomSheet(data.categories.map { OptionPair(it.id, it.name) }) {
                 selectedCategoryId = it.id
-                selectedSubCategoryId = 0
                 edtSubCategory.text = null
+                propertyRecycler.adapter = null
                 (view as TextInputEditText).setText(it.value)
             }.show(supportFragmentManager, null)
         }
@@ -37,10 +39,16 @@ class SearchActivity : BaseActivity() {
             data.categories.find { it.id == selectedCategoryId }?.children
                 ?.map { OptionPair(it.id, it.name) }?.let {
                     BottomSheet(it) { option ->
-                        selectedSubCategoryId = option.id
+                        getProperties(option.id)
                         (view as TextInputEditText).setText(option.value)
                     }.show(supportFragmentManager, null)
                 }
+        }
+    }
+
+    private fun getProperties(id: Int) {
+        observe(viewModel.getProperties(id)) {
+            propertyRecycler.adapter = SearchAdapter(it, supportFragmentManager)
         }
     }
 }
